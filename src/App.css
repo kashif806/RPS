@@ -1,38 +1,70 @@
+body, html {
+    margin:0;
+    padding:0;
+    background-image: url("./bg.jpg");
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin:0;
+
+}
+.Game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0
+    
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.boxContainer {
+    width: 100vw;
+    display : flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.turnBox {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 25vw;
+    min-height : 50vh;
+    /* background-color:lightcoral; */
+    border: 5px solid black;
+}
+  
+.img {
+    height : 40vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.selectorImage {
+    
+    margin: 10px 5px;
+    box-sizing: border-box;
+}
+.selectorImage:hover {
+ /* background-color: red; */
+ border: 3px solid darkgreen;
+ background-color: greenyellow;
 }
 
-.App-link {
-  color: #61dafb;
+h3 {
+    margin:0
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg {
+    background-color: rgba(204, 209, 139, 0.61);
+    padding: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* color: red; */
 }

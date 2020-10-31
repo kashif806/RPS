@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import GamePlay from "./GamePlay";
+
 
 function App() {
+  const [gameState, setgameState] = useState("start");
+  const [rounds, setRounds] = useState(5);
+
+
+  const changeState = (state) => setgameState(state);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="bg">Rock Paper Scissor</h1>
+      {gameState==="inProgress" ? (<GamePlay 
+        rounds={rounds}
+        changeState={changeState}
+        />) : (<div className="msg">
+        <form className="bg" onSubmit={(e)=>{
+          e.preventDefault();
+          setgameState("inProgress");
+        }}>
+  <label htmlfor="rounds">Enter total number of rounds:</label>
+  <input type="number"  name="rounds" onChange={(e)=>setRounds(()=>(parseInt(e.target.value)))}/>
+  <input type="submit" value="Lets Play Hamza" />
+  
+  </form>
+    </div>)}
     </div>
   );
 }
 
 export default App;
+
